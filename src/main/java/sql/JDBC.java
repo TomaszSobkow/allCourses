@@ -25,12 +25,15 @@ public class JDBC {
             Connection  sqlCourseDB = DriverManager.getConnection(url,userName,userPass);
             Statement statement = sqlCourseDB.createStatement();
             ResultSet result = statement.executeQuery(query);
+            int value = 1;
             while (result.next()){
-                String universityData = "";
+
+                StringBuilder universityData = new StringBuilder();
                 for (int i = 1; i <=6; i++){
-                    universityData += result.getString(i)+ "-";
+                    universityData.append(result.getString(i)).append("-");
                 }
-                System.out.println(universityData);
+                System.out.println(value++ + ":\t"+universityData);
+
             }
 
         }catch (SQLException e){

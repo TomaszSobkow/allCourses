@@ -1,4 +1,4 @@
-package amigos;
+package amigos.dataStructure;
 
 import java.util.Stack;
 
